@@ -1,0 +1,85 @@
+
+
+@mixin inner-shadow
+    +box-shadow(rgba(black, .3) 0 -2px 8px 0 inset)
+
+@mixin light-text-shadow($opacity)
+    text-shadow: 0 0 5px rgba(255,255,255,$opacity)
+
+
+
+
+@mixin transition($params...)
+    -webkit-transition:  $params
+    -moz-transition:  $params
+    -ms-transition:  $params
+    -o-transition:  $params
+    transition:  $params
+
+@mixin border-radius($radii...)
+    -webkit-border-radius: $radii
+    -moz-border-radius: $radii
+    border-radius: $radii
+
+@mixin box-shadow($params...)
+    -webkit-box-shadow: $params
+    -moz-box-shadow: $params
+    box-shadow: $params
+
+
+@mixin display-flex
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: flex
+
+@mixin display-box
+    display: -webkit-box
+    display: -moz-box
+    display: -ms-flexbox
+
+@mixin flex($params...)
+    -webkit-flex: $params
+    -moz-flex: $params
+    -ms-flex: $params
+    flex: $params
+
+@mixin flex-flow ($orient: row, $wrap: wrap)
+    -webkit-flex-flow: $orient $wrap
+    flex-flow: $orient $wrap
+
+@mixin flex-direction($params)
+    -webkit-flex-direction: $params
+    -ms-flex-direction: $params
+    flex-direction: $params
+
+@mixin flex-wrap($params)
+    -webkit-flex-wrap: $params
+    -ms-flex-wrap: $params
+    flex-wrap: $params
+
+@mixin  box-pack($params)
+    -webkit-box-pack: $params
+    -moz-box-pack: $params
+    box-pack: $pack
+
+@mixin box-order($params)
+    -webkit-box-ordinal-group: $params
+    -moz-box-ordinal-group: $params
+    -ms-flex-order: $params
+    -webkit-order: $params
+    order: $params
+    
+@mixin breakpoint($point) 
+    @if $point == large
+        @media (max-width: 1600px)
+            @content
+  
+    @else if $point == normal
+        @media (max-width: 1250px)
+            @content
+  
+    @else if $point == small
+        @media (max-width: 767px)
+            @content
+  

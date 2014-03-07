@@ -1,0 +1,6 @@
+<div ng-if='vu("${_arg.name}", item)${(_ngif ? (' && (' + _ngif) + ')' : '').raw()}' class='form-group'>
+    <label class='${_wide ? 'col-md-2' : 'col-md-4'} control-label' for='${_arg.id}'>${messages.get(messages.get(_arg.title))}&nbsp;:</label>
+    <div class='${wide ? 'col-lg-10' : 'col-lg-8'}'>
+    #{doBody /}
+    </div>
+</div>

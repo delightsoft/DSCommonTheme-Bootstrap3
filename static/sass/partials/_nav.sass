@@ -1,0 +1,49 @@
+
+.navbar-inverse
+  background-color: $top-nav-panel
+  border-color: $top-nav-panel
+  font-size: 13px
+  .navbar-brand
+    color: white
+  .navbar-nav > li
+    //&:hover
+    //  & > a
+    //    color: #ffffff
+    //  ul.dropdown-menu
+    //    display: block
+    & > a
+      color: $top-nav-panel-font
+      padding-top: 10px
+      padding-bottom: 10px
+    & > .dropdown-menu
+      font-size: 13px
+      background-color: $top-nav-panel
+      border-top-color: $top-nav-panel
+      padding-top: 0
+      & > li > a
+        color: $top-nav-panel-font
+        &:hover
+          color: lighten($top-nav-panel-font, 20)
+          background-color: lighten($top-nav-panel,10)
+      .divider
+        background-color: lighten($top-nav-panel,10)
+  .navbar-nav
+    & > .active > a
+      background-color: $top-nav-panel
+      &:hover
+        background-color: darken($top-nav-panel, 10)
+    & >.open > a
+      background-color: $top-nav-panel!important
+      &:hover
+        background-color: $top-nav-panel
+
+.navbar-brand
+  font-size: 16px
+
+.df-navpanel-user-select
+  & > div
+    padding-top: 10px
+    padding-bottom: 10px
+    .select2-container
+      min-width: 150px
+

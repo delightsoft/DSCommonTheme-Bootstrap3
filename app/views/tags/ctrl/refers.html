@@ -1,0 +1,6 @@
+%{ if (_arg.template == 'DICT') { }%
+#{std.refers _arg, template: 'dict', debug: _debug /}
+%{ } else { }%
+%{ if (_debug) _arg.debugSmartTag('docs', this); }%
+%{ _arg.smartTag('docs', this, _debug); }%
+%{ } }%

@@ -1,0 +1,84 @@
+
+.df-dropdown-menu
+  .dropdown-menu
+    font-size: 12px
+    min-width: 130px
+    &>li > a
+      padding: 4px 11px!important
+      line-height: 1.2!important
+      cursor: pointer
+      &:hover
+        color: lighten($top-nav-panel-font, 30)
+        background-color: lighten($top-nav-panel,20)
+
+
+.btn-default
+  background-color: $bg-color
+
+
+.btn-select2-add
+  display: inline-block
+  vertical-align: middle
+  opacity: 0.2
+  margin-right: 5px
+  padding-top: 3px
+  cursor: pointer
+  font-size: 20px
+  @include transition(all 0.2s ease)
+  &:hover
+    opacity: 0.8
+
+#btn-back-history
+  position: absolute
+  padding-top: 10px
+  left: 10px
+  i
+    opacity: 0.2
+    cursor: pointer
+    font-size: 20px
+    @include transition(all 0.2s ease)
+    &:hover
+      opacity: 0.6
+
+.df-list-actions-btn
+  position: relative
+  @extend .df-dropdown-menu
+
+.df-item-footer
+  @extend .df-dropdown-menu
+
+
+
+.df-btn-page-header-panel
+  background-color: $page-header-panel
+  border-color: darken($page-header-panel,10)
+  color: black
+  height: 25px!important
+  i
+    color: $top-nav-panel
+  &:hover
+    background-color: darken($page-header-panel,10)
+
+.df-upload-button
+  overflow: hidden
+  cursor: pointer
+  position: relative
+  input[type="file"]
+    width: 150px
+    height: 40px
+    position: absolute
+    right: 0px
+    top: 0px
+    cursor: pointer
+    opacity: 0
+
+.df-href-disable
+  cursor: default!important
+  color: darken(#E6E6E6,10)!important
+  pointer-events: none
+
+
+
+
+
+  

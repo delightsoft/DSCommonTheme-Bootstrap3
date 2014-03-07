@@ -1,0 +1,117 @@
+<link href="@{'/static/libs/bootstrap-3.0.2/css/bootstrap.css'}" media="all" type="text/css" rel="stylesheet">
+<link href="@{'/static/css/vendor/font-awesome/font-awesome.css'}" media="all" type="text/css" rel="stylesheet">
+<link href="@{'/static/libs/select2-3.4.5/select2.css'}" media="all" type="text/css" rel="stylesheet">
+<link href="@{'/static/css/app.css'}" media="all" type="text/css" rel="stylesheet">
+
+<!-- JQuery -->
+<script type="text/javascript" src="@{'/static/libs/jquery-2.0.3/jquery-2.0.3.min.js'}"></script>
+
+<!-- Angular -->
+<script type="text/javascript" src="@{'/static/libs/angular-1.2.1/angular.js'}"></script>
+<script type="text/javascript" src="@{'/static/libs/angular-1.2.1/angular-route.js'}"></script>
+<script type="text/javascript" src="@{'/static/libs/angular-1.2.1/angular-loader.js'}"></script>
+<script type="text/javascript" src="@{'/static/libs/angular-1.2.1/angular-animate.js'}"></script>
+<script type="text/javascript" src="@{'/static/libs/angular-1.2.1/angular-cookies.js'}"></script>
+*{<script type="text/javascript" src="@{'/static/libs/angular-1.2.1/angular.min.js'}"></script>}*
+*{<script type="text/javascript" src="@{'/static/libs/angular-1.2.1/angular-route.min.js'}"></script>}*
+*{<script type="text/javascript" src="@{'/static/libs/angular-1.2.1/angular-loader.min.js'}"></script>}*
+*{<script type="text/javascript" src="@{'/static/libs/angular-1.2.1/angular-animate.min.js'}"></script>}*
+*{<script type="text/javascript" src="@{'/static/libs/angular-1.2.1/angular-cookies.min.js'}"></script>}*
+<script type="text/javascript" src="@{'/static/libs/angular-1.2.1/i18n/angular-locale_ru-ru.js'}"></script>
+
+<!-- Bootstrap -->
+<script type="text/javascript" src="@{'/static/libs/bootstrap-2.0/js/bootstrap.min.js'}"></script>
+<!-- Bootstrap 2 CSS built into our CSS by SASS -->
+
+<!-- Bootstrap UI components -->
+
+<!--   General components, like 'openDialog', 'tabs' etc. -->
+<script type="text/javascript" src="@{'/static/libs/angular-ui/ui-bootstrap-0.6.0/ui-bootstrap-0.6.0.min.js'}"></script>
+<script type="text/javascript" src="@{'/static/libs/angular-ui/ui-bootstrap-0.6.0/ui-bootstrap-tpls-0.6.0.min.js'}"></script>
+
+<!--   UI router -->
+<script type="text/javascript" src="@{'/static/libs/angular-ui/ui-router-0.2.5/angular-ui-router.js'}"></script>
+*{<script type="text/javascript" src="@{'/static/libs/angular-ui/ui-router-0.2.5/angular-ui-router.min.js'}"></script>}*
+
+<!--   Utility directives -->
+<script type="text/javascript" src="@{'/static/libs/angular-ui/ui-utils-0.0.4/ui-utils.min.js'}"></script>
+
+<!--   Utility directives -->
+*{<script type="text/javascript" src="@{'/static/libs/jquery-ui/jquery-ui.js'}"></script>}*
+<script type="text/javascript" src="@{'/static/libs/jquery-ui-1.10.3/jquery-ui-1.10.3.tooltip.js'}"></script>
+<script type="text/javascript" src="@{'/static/libs/angular-ui/ui-sortable-0.0.1/sortable.js'}"></script>
+
+<!-- D3 -->
+<script type="text/javascript" src="@{'/static/libs/d3.v3/d3.v3.min.js'}"></script>
+
+<!-- NV.D3 -->
+<script type="text/javascript" src="@{'/static/libs/novus-nvd3-v1.1.12-beta-0/nv.d3.min.js'}"></script>
+<link type="text/css" rel="stylesheet" href="@{'static/libs/novus-nvd3-v1.1.12-beta-0/src/nv.d3.css'}" media="all" >
+
+<!-- Redactor -->
+<script type="text/javascript" src="@{'/static/libs/redactor/widget.js'}"></script>
+<script type="text/javascript" src="@{'/static/libs/redactor/plugins/fullscreen/fullscreen.js'}"></script>
+<script type="text/javascript" src="@{'/static/libs/redactor/redactor.js'}"></script>
+<link href="@{'/static/libs/redactor/redactor.css'}" media="all" type="text/css" rel="stylesheet">
+*{<link href="@{'/static/libs/redactor/redactor-iframe.css'}" media="all" type="text/css" rel="stylesheet">}*
+
+<!-- SELECT 2 -->
+<script type="text/javascript" src="@{'/static/libs/select2-3.4.5/select2.js'}"></script>
+<script type="text/javascript" src="@{'/static/libs/angular-ui/ui-select2-0.0.2/select2.js'}"></script>
+
+<!-- Raty (Rating star) http://wbotelhos.com/raty -->
+<script type="text/javascript" src="@{'static/libs/raty/jquery.raty.js'}"></script>
+
+<!-- Date Picker -->
+<script type="text/javascript" src="@{'static/libs/picker/date/bootstrap-datepicker.js'}"></script>
+<link href="@{'static/libs/picker/date/datepicker.css'}" media="all" type="text/css" rel="stylesheet">
+
+<!-- DateTime Picker -->
+<script type="text/javascript" src="@{'static/libs/picker/datetime/bootstrap-datetimepicker.js'}"></script>
+<script type="text/javascript" src="@{'static/libs/picker/datetime/locales/bootstrap-datetimepicker.ru.js'}"></script>
+<link href="@{'static/libs/picker/datetime/datetimepicker.css'}" media="all" type="text/css" rel="stylesheet">
+
+<!-- Docflow configuration, generated based on user rights -->
+<script type="text/javascript">
+${code.docflow.javascript.DocflowConfig2JavaScript.build().raw()}
+</script>
+
+<!-- Application code -->
+<script type="text/javascript" src="@{'/app/ngapp/docflow/config.coffee'}"></script>
+
+<script type="text/javascript" src="@{'/app/ngapp/templates.coffee'}"></script>
+
+<script type="text/javascript" src="@{'/app/ngapp/docflow/ui/actions.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/ui/client.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/ui/editor.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/ui/form.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/ui/states.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/ui/table.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/ui/tabLinkedDocument.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/ui/utils.coffee'}"></script>
+
+<script type="text/javascript" src="@{'/app/ngapp/docflow/user/login.coffee'}"></script>
+
+<script type="text/javascript" src="@{'/app/ngapp/docflow/misc/resizeItemContent.coffee'}"></script>
+
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/container.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/datetime.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/dropdown.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/enum.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/password.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/phone.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/popover.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/scrollspy.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/select2.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/selector.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/state.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/subtable.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/tags.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/texteditor.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/textareasize.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/widget/photocontrol.coffee'}"></script>
+
+<script type="text/javascript" src="@{'/app/ngapp/docflow/docflow.coffee'}"></script>
+<script type="text/javascript" src="@{'/app/ngapp/docflow/app.common.coffee'}"></script>
+
+<script type="text/javascript" src="@{'/app/ngapp/app.coffee'}"></script>

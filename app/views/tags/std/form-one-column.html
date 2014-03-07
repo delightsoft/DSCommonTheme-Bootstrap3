@@ -1,0 +1,6 @@
+<form name="form" novalidate class="form-horizontal">
+%{ def anyTabs = _tmpl.tabs != null
+   def skipSubj = _tmpl.name == 'linkedDocument'
+     _tmpl.fields.each { field -> if (field.hidden || (anyTabs && _tmpl.getTabByName(field.name) != null) || (skipSubj && field.name =='subj')) return; if (_debug) field.debugSmartTag('form', this); field.smartTag('form', this, _debug); } }%
+#{doBody /}
+</form>

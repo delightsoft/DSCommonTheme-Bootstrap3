@@ -1,0 +1,10 @@
+<div class="col-md-2">
+    <ul class="list-unstyled" docflow-widget-subtable="{field:'${_arg.name}'}" ng-model="$parent.${_arg.view ?: _arg.update}" name="${_arg.name}">
+            <li ng-repeat="item in list" ng-form="form">
+            %{ _arg.fields.each { field -> }%<span>
+            %{ if (debug) field.debugSmartTag('ctrl', this)
+            field.smartTag('ctrl', this, _debug) }%
+            </span>%{ } }%
+            </li>
+    </ul>
+</div>

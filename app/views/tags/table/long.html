@@ -1,0 +1,4 @@
+<div class="col-md-1">
+%{ if (_arg.view) { }%<p class="form-control-static" ng-if='v("${_arg.name}",item)'>{{${_arg.view}}}</p>  %{ } }%
+#{std.input _arg, type: 'number' /}
+</div>

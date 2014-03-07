@@ -1,0 +1,5 @@
+<div class="col-md-2">
+%{ if(_header)}% #{table.header header: _header /}
+%{ if (_arg.view) { }%<p ng-if='v("${_arg.name}", item)' class='form-control-static'>{{item.${_arg.name}}}</p> %{ } }%
+#{std.input _arg, type: 'email' /}
+    </div>

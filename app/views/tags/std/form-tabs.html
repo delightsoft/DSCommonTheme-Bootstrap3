@@ -1,0 +1,30 @@
+%{ def tabs = _tmpl.tabs;
+   def item = _document;
+  if (_item) {
+    item = _document.root.getDocumentByName(_item)
+    if (item) {
+        def itemTemplate = item.getTemplateByName('form');
+        if (itemTemplate) tabs = itemTemplate.tabs;
+    }
+  }
+  if (tabs) { }%
+<ul class="nav nav-tabs" id="item-tabs">%{
+    if (!_tab) { }%
+    <li class="active" ng-class="{'tab-sign-edited':editor.tabs._main.modified}"><a>&{'form.mainTab'}
+    <i class="fa fa-asterisk tab-sign-edited-icon"></i></a></li>%{
+    } else { }%
+    <li><a ng-click="editor.selectTab('_main')" ng-class="{'tab-sign-edited':editor.tabs._main.modified}">&{'form.mainTab'}
+    <i class="fa fa-asterisk tab-sign-edited-icon"></i></a></li>%{
+    }
+    tabs.each { tab ->
+      if (tab.name == _tab) { }%
+    <li class="active"><a ng-class="{'tab-sign-edited':editor.tabs.${tab.name}.modified}">${messages.get(messages.get(tab.title))}
+    <i class="fa fa-asterisk tab-sign-edited-icon"></i></a></li>%{
+      } else { }%
+    <li><a ng-click="editor.selectTab('${tab.name}')" ng-if="editor.tabs.${tab.name}.visible" ng-class="{'tab-sign-edited':editor.tabs.${tab.name}.modified}">
+    ${messages.get(messages.get(tab.title))}
+    <i class="fa fa-asterisk tab-sign-edited-icon"></i></a></li>%{
+      }
+    } }%
+</ul>%{
+  } }%

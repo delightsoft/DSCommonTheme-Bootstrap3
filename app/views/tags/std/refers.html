@@ -1,0 +1,27 @@
+%{if (_arg.view) { }%<div class="form-control-static" ng-if="v('${_arg.name}', item)">
+    <a ng-if="item.${_arg.name}.id" ng-href="{{$docflow.hrefOpenDoc(item.${_arg.name}.id)}}">{{${_arg.view}.text}}</a></div>%{ } }%
+%{if (_arg.update) { }%
+<table class="df-table-input-element" ng-if="u('${_arg.name}',item)" ng-model="$parent.${_arg.update}" name="${_arg.name}"%{ if (_arg.required) { %} required%{ } }%
+docflow-widget-selector='{docType:"${_arg.type.substring(1)}",template:"${_template}",first:""}'>
+<tr>
+    <td>
+        <input docflow-select2 type="hidden">&nbsp;
+    </td>
+    <td>
+        <div ng-click="createNew()" class="btn-select2-add"><i class="fa fa-plus-circle"></i></div>
+    </td>
+%{  def checks = ['required']
+    if (checks.any { err -> _arg[err] }) { }%
+    <td class='warning-sign-td'>
+        <i ng-show='u("${_arg.name}",item)&&form.${_arg.name}.$invalid' class='fa fa-warning' docflow-widget-popover="{trigger:'hover',placement:'right'}">
+            <div class='popover'>
+                <div class='arrow'></div>
+                <div class='popover-content'>
+                %{ checks.each { err -> if (_arg[err]) { }%<label ng-show='u("${_arg.name}",item)&&form.${_arg.name}.$error.${err}'>${messages.get("validation." + err, _arg[err])}</label>%{ }} }%
+                </div></div></i>
+        <i ng-hide='u("${_arg.name}",item)&&form.${_arg.name}.$invaid' class='fa fa-warning opacity0'></i>
+    </td>
+%{ } }%
+</tr>
+</table>
+%{ } }%

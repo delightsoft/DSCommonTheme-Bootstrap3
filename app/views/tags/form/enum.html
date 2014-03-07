@@ -1,0 +1,31 @@
+#{std.form-line _arg, debug: _debug, wide: _wide}
+
+%{ if (_arg.view) { }%<p ng-if='v("${_arg.name}", item)' class='form-control-static'>{{${_arg.view}}}</p>%{ } }%
+%{ if (_arg.update) { }%<table ng-if='u("${_arg.name}", item)' class='df-table-input-element'><tr>
+    <td style='text-align:left;'>
+    %{ if (_arg.multiple) {
+        out.print "<select ui-select2 multiple ng-model='${_arg.update}' docflow-fix-select2 class='input-medium'>"
+        } else {
+        out.print "<select  ui-select2 ng-model='${_arg.update}' name='${_arg.name}' class='input-medium' "
+        }
+        if (_arg.required) {out.print " required"}
+        out.print "><option value=''></option>"
+        _arg.enumValues.each { value -> out.print"<option value='${value.name}'>${messages.get(value.title)}</option>" }
+        }%
+    </select>
+    </td><td>
+    <i ng-show='u("${_arg.name}", item)&&form.${_arg.name}.$invalid'
+       class='fa fa-warning'
+       docflow-widget-popover="{trigger:'hover', placement:'right'}">
+        <div class='popover'>
+            <div class='arrow'></div>
+            <div class='popover-content'>
+                <label ng-show='u("${_arg.name}", item)&&form.${_arg.name}.$error.required'>
+                ${messages.get("validation.required")}
+                </label>
+            </div>
+        </div>
+    </i>
+    <i ng-hide='u("${_arg.name}", item)&&form.${_arg.name}.$invalid' class='fa fa-warning opacity0'></i>
+</td></tr></table>%{ } }%
+#{/std.form-line}

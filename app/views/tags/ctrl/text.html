@@ -1,0 +1,28 @@
+%{ if (_arg.view) { }%<p class="form-control-static" ng-if='v("${_arg.name}", item)'>{{item.${_arg.name}}}</p> %{ } }%
+%{ if (_arg.update) { }%
+#{std.input-frame _arg, debug: _debug, tableClass: _tableClass}
+
+<textarea  ng-if='u("${_arg.name}",item)'
+           id='${_arg.id}' name='${_arg.name}'
+           class='grd-white form-control' ng-model='${_arg.update}'
+           docflow-widget-textarea-size%{
+if (_arg.required)
+   out.print " required"
+['minLength', 'maxLength'].each{ err ->
+  if (_arg[err])
+    out.print " $err='${_arg[err]}'"
+} }%
+#{if _rows != null} rows='${_rows}' #{/if}
+ng-class="{'input-valid-error': form.${_arg.name}.$invalid}">
+</textarea>
+
+#{std.input-frame-validation _arg, debug: _debug, show: "u('${_arg.name}',item)&&form.${_arg.name}.\$invalid"}
+
+%{['required', 'minLength', 'maxLength', 'pattern'].each{ err ->
+if (_arg[err])
+  out.println "<label ng-show='u(\"${_arg.name}\",item)&&form.${_arg.name}.$error.$err'>${messages.get("validation." + err, _arg[err])}</label>"
+} }%
+
+#{/std.input-frame-validation}
+#{/std.input-frame}
+%{ } }%

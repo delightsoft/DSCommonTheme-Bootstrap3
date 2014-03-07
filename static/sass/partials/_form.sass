@@ -1,0 +1,114 @@
+
+#item-tabs
+  font: bold 16px "Droid Sans", Arial, Helvetica, sans-serif
+  color: #7fa0a0
+  margin-top: 15px
+  li.active
+    &>a
+      background-color: $bg-color
+      color: #428bca
+
+
+.df-form-tabs
+  .nav-tabs
+    & > li
+      cursor: pointer
+      & > a
+        line-height: 0.6
+        font-size: 14px
+        padding: 11px 8px
+  .tab-content
+    margin-top: 20px
+    form
+      overflow: auto
+      overflow-x: hidden
+      //overflow-y: scroll
+      &>div:nth-last-child(2)
+        margin-bottom: 70px
+
+.tab-sign-edited-icon
+  display: none!important
+
+.tab-sign-edited
+  position: relative
+  .tab-sign-edited-icon
+    display: inline!important
+    position: absolute
+    right: 0
+    top: 0
+    font-size: 10px
+    margin-left: 2px
+    color: red
+
+.fa-warning
+  padding-top: 2px
+  font-size: 16px!important
+  color: #BD362F!important
+
+.input-valid-error
+  background: #FFEAC8!important
+
+
+
+.df-item-footer
+  bottom: 0
+  position: fixed
+  z-index: $main-header-index
+  margin-bottom: 0!important
+  width: 100%
+  margin-left: -20px!important
+  .row
+    min-height: 45px
+    margin: 0
+    border: 1px solid darken($bg-color,10)
+    background: darken($bg-color,5)
+    //border-radius: $panel-border-radius
+  button
+    margin-top: 5px
+    &.df-btn-cancel
+      margin-right: 15px
+      float: right
+  .fa-angle-double-up
+    font-size: 15px
+
+.modal-content
+  .df-item-footer
+    width: 100%
+    margin-left: 0!important
+    padding-right: 22px!important
+
+
+
+.password-change-form
+  input
+    display: block
+    margin-top: 10px
+  span
+    display: block
+  button
+    margin-top: 5px
+
+.password-change-table
+  min-width: 250px
+  input
+    display: block
+    width: 95%!important
+
+.df-form-photo-control
+  position: relative
+  button
+    @include transition(all 0.2s ease)
+    position: absolute
+    left: 0px
+    bottom: 0px
+    opacity: .3
+    &:hover
+      opacity: .8
+  .df-nophoto-case
+    position: relative
+    margin: 10px 0 10px 0
+.df-form-photo
+  max-width: 200px
+
+.df-form-text-wide
+  width: 100%!important

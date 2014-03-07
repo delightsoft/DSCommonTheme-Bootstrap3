@@ -1,0 +1,47 @@
+.container
+  padding-left: $container-right-padding
+  padding-right: $container-left-padding
+  @media screen and (min-width: $break-small)
+    width: 100%!important
+
+.table-striped > tbody > tr:nth-child(odd) > td
+  background-color: saturate($bg-color, 50)
+
+.form-group
+  margin-bottom: 10px
+
+.form-control
+  font-size: 13px
+  padding: 2px 7px
+  height: 30px
+
+.form-horizontal .form-control-static
+  padding-top: 8px
+
+
+
+.popover
+  max-width: 500px
+
+.navbar-fixed-top
+  height: $top-navbar-height
+
+.navbar
+  min-height: $top-navbar-height
+
+.navbar-brand
+  padding-top: 10px
+
+.label
+  font-weight: normal!important
+  a
+    color: white
+    text-decoration: none
+
+.tooltip
+  .tooltip-inner
+    background-color: darken($top-nav-panel, 10)
+  &.bottom
+    .tooltip-arrow
+      border-bottom-color: darken($top-nav-panel, 10)
+

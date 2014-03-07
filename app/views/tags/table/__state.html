@@ -1,0 +1,6 @@
+<div class="col-md-1">
+%{ if(_header) out.print("<strong>Статус</strong>")}%
+    <a ng-if='item.id' href="{{$docflow.hrefOpenDoc(item.id)}}">
+        <span class="label label-info" docflow-state ng-model='item'></span>
+    </a>
+</div>

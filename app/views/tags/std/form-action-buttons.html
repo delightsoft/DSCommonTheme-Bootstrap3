@@ -1,0 +1,49 @@
+<div class='form-group df-item-footer'>
+    <div class="row">
+        <div class='col-md-offset-2'>
+            %{
+            def editorDocTmpl = _item ? _document.root.getDocumentByName(_item).getTemplateByName('form') : _tmpl
+            def linkedDocumentAction = _tmpl.getActionByName('create')
+            def create = editorDocTmpl.getActionByName('create')
+            def update = editorDocTmpl.getActionByName('update')
+            if (linkedDocumentAction) { }%
+            <button ng-disabled="!editor.modified" ng-if="tab.isNew && editor.isNew != tab.isNew" class="btn btn-sm btn-primary item-form-btn-create" ng-click="editor.save()">&{messages.get(linkedDocumentAction.title)}</button>%{
+            }
+            if (create) { }%
+            <button ng-disabled="!editor.modified" ng-if="editor.isNew && editor.doc.$a.create && editor.isNew == tab.isNew" class="btn btn-sm btn-primary item-form-btn-create" ng-click="editor.save()">&{messages.get(create.title)}</button>%{
+            }
+            if (update) { }%
+            <button ng-disabled="!editor.modified" ng-if="!editor.isNew && editor.doc.$a.update && editor.isNew == tab.isNew" class="btn btn-sm btn-primary item-form-btn-update" ng-click="editor.save()">&{messages.get(update.title)}</button>%{
+            }
+            _tmpl.actions.each { action -> if (!action.display || action.outOfForm || action.other || action.name == 'create' || action.name == 'update') return;}%
+            <button ng-if="${("item.\$a.${action.name}" + (action.ngif ? (' && (' + action.ngif) + ')' : '')).raw()}"
+                    ng-disabled="${action.ngdisabled ?: action.update ? '' : 'editor.modified'}"
+                    class="btn btn-sm btn-primary item-form-btn-${action.name}"
+                    ng-click="${action.script ?: "tab.action('${action.name}')"}">
+                &{messages.get(action.title)}
+            </button>%{
+            } }%
+            %{ if (_tmpl.actions.any { action -> action.other }) { }%
+                <div class="btn-group btn-group-sm dropup" docflow-container>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-angle-double-up"></i>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                    %{ _tmpl.actions.each { action -> if (!action.display || !action.other) return; }%
+                        <li>
+                            <a ng-show="${("item.\$a.${action.name}" + (action.ngif ? (' && (' + action.ngif) + ')' : '')).raw()}"
+                            docflow-container-item-show="${("item.\$a.${action.name}" + (action.ngif ? (' && (' + action.ngif) + ')' : '')).raw()}"
+                            ng-disabled="${action.ngdisabled ?: action.update ? '' : 'editor.modified'}"
+                            class="item-form-btn-${action.name}"
+                            ng-click="${action.script ?: "tab.action('${action.name}')"}">
+                        &{messages.get(action.title)}
+                            </a>
+                        </li>
+                    %{ } }%
+                    </ul>
+                </div>
+            %{ } }%
+            <button class="btn btn-sm df-btn-cancel" ng-if="editor.doc.$a.create || editor.doc.$a.update" ng-disabled="!editor.modified" ng-click="editor.cancel()">${messages.get('form.cancel')}</button>
+        </div>
+    </div>
+</div>

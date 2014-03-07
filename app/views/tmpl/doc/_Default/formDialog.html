@@ -1,0 +1,43 @@
+<div class="modal-dialog df-modal-form">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div>
+                    <!-- Info messages -->
+                    #{std.form-message /}
+
+                    <!-- Item header -->
+                    <div class="df-page-header-panel"%{ def isFirst = true;
+                    document.states.each { state -> if (!state.color) return;
+                    if (isFirst) { out.print " ng-class=\"{"; isFirst = false; }
+                    else out.print ",";
+                    out.print "'color-${state.color}':item.state=='${state.name}'";
+                    }; if (!isFirst) out.print "}\""; }%>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="button" class="close" ng-click="$close()">&times;</button>
+                            <div ng-include="itemHeaderUrl"/>
+                        </div>
+                    </div>
+                </div>
+                <!--Main Area-->
+                <div ng-include="tab.angularTmpl" class="df-form-tabs"></div>
+                <script type="text/ng-template" id="/tmpl/doc/${document.name}?t=mainTab">
+                    <div class="row" ng-controller="tab.controller" docflow-form>
+                        <div class="col-md-12">
+                            <!--Tabs -->
+                            #{std.form-tabs document: document, tmpl: template, debug: debug /}
+                            <!--Tab content -->
+                            <div class="tab-content" >
+                            #{std.form document: document, tmpl: template, debug: debug}
+                                #{std.form-action-buttons document: document, tmpl: template, debug: debug /}
+                            #{/std.form}
+                            </div>
+                        </div>
+                    </div>
+                </script>
+            </div>
+        </div>
+    </div>
+</div>

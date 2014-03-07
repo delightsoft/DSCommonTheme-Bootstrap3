@@ -1,0 +1,7 @@
+%{ if (_arg.view) { }%<img class="df-form-photo" ng-if='v("${_arg.name}", item)' ng-src='{{${_arg.view}}}'/>%{ } }%
+%{ if (_arg.update) { }%
+<div ng-if='u("${_arg.name}", item)' class="df-form-photo-control" docflow-widget-photo-control ng-model="${_arg.update}">
+    <img ng-src="{{${_arg.update}}}" class="df-form-photo">
+    <button class='btn btn-default btn-sm' ng-class="{'df-nophoto-case':!item._u.${_arg.name}}"  ng-click="changePhoto()">Поменять фото</button>
+</div>
+%{ } }%

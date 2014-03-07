@@ -1,0 +1,12 @@
+%{ if (_debug) {
+    out.print '<i class="fa fa-wrench" docflow-widget-popover>'
+    out.print '<div class="popover"><div class="arrow"></div><h3 class="popover-title">Tags selection sequence:</h3>'
+    out.print '<div class="popover-content"><ol style="width:270;">'
+    _arg.tagsSequence.each { tag ->
+        if (tag == _type)
+            out.print "<li><b>app/view/tags/${_path}/${tag}.html</b></li>"
+        else
+            out.print "<li>app/view/tags/${_path}/${tag}.html</li>"
+    }
+    out.print '</ol></div> </div> </i>'
+} }%

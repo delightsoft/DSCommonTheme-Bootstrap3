@@ -1,0 +1,3 @@
+<div ng-repeat="item in [item.${_arg.name}]">
+%{ _arg.fields.each { field -> if (!field.derived) { if (_debug) field.debugSmartTag('form', this); field.smartTag('form', this, _debug) }} }%
+</div>

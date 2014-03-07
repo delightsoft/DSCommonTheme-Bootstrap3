@@ -1,0 +1,4 @@
+<div class="col-md-1">
+%{ if (_arg.view) { }%<p ng-if='v("${_arg.name}", item)' class='form-control-static'>{{item.${_arg.name}}}</p>%{ } }%
+%{ if (_arg.update) { }%#{std.input _arg, type: 'checkbox' /}%{ } }%
+    </div>

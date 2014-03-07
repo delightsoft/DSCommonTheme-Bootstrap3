@@ -1,0 +1,6 @@
+<div docflow-actions-container="{errorOnly:${_errorOnly ?: false}}" ng-show="action.message" class="container">
+    <div class="df-msg-{{action.state}}">
+        <button type="button" class="close" ng-show="action.showClose" ng-click="action.hide()">&times;</button>
+        <div docflow-actions-container-content></div>
+    </div>
+</div>

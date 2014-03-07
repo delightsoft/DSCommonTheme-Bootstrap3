@@ -1,0 +1,33 @@
+.info-card-person
+  background-color: #F7F7F7
+  border: 1px solid #C0D9D5
+  padding: 10px
+  @include border-radius(15px)
+  margin-bottom: 20px
+  p
+    margin-bottom: 5px
+  //&>div
+  //  display: inline-block
+  //  vertical-align: top
+  .icon-wrapper
+    width: 40px
+    text-align: center
+    margin-right: 10px
+  i
+    font-size: 40px
+    color: #0088CC
+
+
+.info-card-division
+  @extend .info-card-person
+  .btn-transition
+    @extend .btn-select2-add
+    a
+      text-decoration: none
+      i
+        font-size: 30px
+        padding-right: 2px
+
+.df-info-card-division-persons
+  margin-top: 12px
+  font-size: 13px

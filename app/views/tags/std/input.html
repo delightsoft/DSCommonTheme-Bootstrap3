@@ -1,0 +1,16 @@
+%{ if (!_arg.update) return }%
+#{std.input-frame _arg, debug: _debug}
+
+<input ng-if="u('${_arg.name}',item)" id="${_arg.id}" name="${_arg.name}" type="${_type}" class="grd-white form-control" ng-model="${_arg.update}"%{
+['min', 'min', 'max', 'minLength', 'maxLength', 'pattern'].each { err -> if (_arg[err]) out.print " $err='${_arg[err]}'" }
+if (_arg.required) out.print " required" %} ng-class="{'input-valid-error': form.${_arg.name}.$invalid}">
+
+#{std.input-frame-validation _arg, debug: _debug, show: "u('${_arg.name}',item)&&form.${_arg.name}.\$invalid"}
+
+%{ ['required', 'min', 'max', 'minLength', 'maxLength', 'pattern'].each { err -> if (_arg[err]) { }%
+#{std.input-frame-message _arg, err: err /}%{ }}
+if (_arg.type == 'email') { }%
+#{std.input-frame-message _arg, err: 'email' /}%{ } }%
+
+#{/std.input-frame-validation}
+#{/std.input-frame}

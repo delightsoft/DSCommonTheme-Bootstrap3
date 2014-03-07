@@ -1,0 +1,4 @@
+<div class="col-md-1">
+    <a ng-if="item.id" ng-href="{{$docflow.hrefOpenDoc(item.id)}}">{{item.text}}</a>
+    <div ng-if="not item.id">{{item ? (item.text ? item.text : '[object]') : '[null]'}}</div>
+<div>

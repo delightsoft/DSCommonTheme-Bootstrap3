@@ -1,0 +1,29 @@
+???:
+novus-nvd3-v1.1.12-beta-0
+picker
+raty
+
+??? Should we switch to UI-Bootstrap version
+bootstrap-datepicker: https://github.com/eternicode/bootstrap-datepicker
+picker:
+    time: https://github.com/eternicode/bootstrap-datepicker
+    datetime: http://www.malot.fr/bootstrap-datetimepicker/
+
+???:
+bootstrap-wysihtml5
+
+
+angular-ui: https://github.com/angular-ui
+    ui-bootstrap: https://github.com/angular-ui/ui-calendar
+    ui-router: https://github.com/angular-ui/ui-router
+    ui-select2: https://github.com/angular-ui/ui-select2
+    ui-sortable: https://github.com/angular-ui/ui-sortable
+    ui-utils: https://github.com/angular-ui/ui-utils
+d3.v3: http://d3js.org/
+jquery: http://jquery.com/
+jquery-ui: http://jqueryui.com/
+jsuri: https://code.google.com/p/jsuri/
+redactor: http://imperavi.com/redactor/ (! should by it - dev version $100)
+select2: http://ivaynberg.github.io/select2/
+spin.js: http://fgnass.github.io/spin.js/
+

@@ -1,0 +1,4 @@
+self: play -> DSCommonTheme-Bootstrap3 0.1
+
+require:
+    - play

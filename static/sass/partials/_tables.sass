@@ -1,0 +1,195 @@
+$filter-panel-height: 50px
+$panel-border-radius: 5px
+
+
+//
+//   list template
+//
+.df-table-filters
+  background-color: $page-header-panel
+  vertical-align: middle!important
+  margin-left: 0px
+  margin-right: 0px
+  padding-bottom: 10px
+  padding-left: 5px
+  .form-control, .btn-default
+    border: 1px solid darken($page-header-panel,10)
+  .select2-container
+    width: 120px
+    margin-top: -1px
+    .select2-choice
+      height: 28px!important
+      border-color: darken($page-header-panel,10)
+  .df-other-button-col
+    margin-left: -28px
+    .select2-choice
+      font-size: 13px
+    & > div
+      display: inline-block
+      vertical-align: middle!important
+      margin-left: 4px
+      margin-top: 2px
+      &:last-child
+        float: right
+        margin-right: 15px
+
+.df-list-refresh-btn
+  font-size: 13px
+  padding-left: 9px
+  padding-right: 9px!important
+  padding-top: 4px
+  height: 28px!important
+  i
+    margin-right: 5px
+  .fa-repeat
+    margin-right: 0
+
+.df-list-actions-btn
+  & > .btn-group > button
+    font-size: 17px
+    padding-left: 7px
+    padding-right: 7px
+    padding-top: 0px
+    height: 28px
+
+
+.select2-drop-active
+  border-color: darken($page-header-panel,10)
+
+.df-list-table-header
+  background-color: $bg-color
+  font-size: 13px
+  padding-top:  5px
+  border-bottom: 1px solid darken($bg-color,8)
+  .row
+    padding: 0px 10px 5px 20px
+    //div:first-child
+    //  margin-left: 0.8%
+
+.df-list-table
+  overflow-y: auto
+  font-size: 13px
+  font-weight: 400
+  .row
+    padding: 5px 10px 5px 20px
+    &:nth-child(2n+1)
+      //background-color: darken($bg-color,5)
+    &:hover
+      background-color: darken($bg-color,3)
+    border-bottom: 1px solid darken($bg-color,8)
+    a
+      text-decoration: none
+    i
+      color: darken($page-header-panel, 20)
+  .df-list-search-nothing
+    padding-left: 20px
+    padding-top: 20px
+
+.df-list-table, .df-list-table-header
+  .df-firstcol
+    float: left
+    width: 0.8%
+    @extend .df-dropdown-menu
+
+
+.df-list-table-pagination
+  position: fixed
+  bottom: 0
+  z-index: $main-header-index
+  min-height: 50px
+  margin-left: 15px
+  pagination
+    margin-top: 5px
+
+
+.df-table-input-element
+  border-collapse: collapse
+  border: none
+  td
+    border-collapse: collapse
+    padding: 0
+    vertical-align: top
+    border: none!important
+    background-color: inherit!important
+    i
+      padding-left: 5px
+      margin-right: 3px
+      //opacity: 0.5
+  textarea
+    min-width: 200px
+  input
+    min-width: 200px
+  input[type='checkbox']
+    margin-right: 10px
+  .warning-sign-td
+    padding-top: 7px
+  .select2-container
+    width: 200px!important
+    margin-top: 2px
+    .select2-choice
+      border:  1px solid #cccccc
+      height: 32px!important
+  &.ng-invalid
+    .select2-choice
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFEAC8), color-stop(100%,#FFEAC8))
+
+
+.df-sort-arrow
+  font-size: 16px
+  color: darken($page-header-panel, 40)
+  @include transition(all 0.2s ease)
+  padding-right: 30px
+  opacity: 0.5
+  &:hover
+    //color: darken($page-header-panel, 20)
+    cursor: pointer
+
+
+
+//      Subtables
+//-----------------------------
+.df-subtable
+  th
+    border: none!important
+  td
+    border: none!important
+
+.df-subtable-row-count
+  position: absolute
+  left: -15px
+  font-size: 15px
+  padding-top: 7px!important
+  span
+    opacity: 0.5
+  .fa-ellipsis-v
+    cursor: move
+    opacity: 0.3
+    font-size: 14px
+    margin-right: 3px
+
+
+
+
+//-----------------------------
+
+.table-thead-centre
+  th
+    text-align: center
+
+
+.info-card-person-table
+  i
+    opacity: 0.5
+    margin-right: 3px
+
+
+.info-card-address-table
+  .address-notes
+    font-size: 12px
+
+.table-item
+  th
+    text-align: center
+  input
+    width: 80%!important
+
